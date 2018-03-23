@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>LeetCode twoSum - Mddct - Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mddct" />
+  <meta name="description" content="
+" />
+<meta name="keywords" content="leetcode twosum" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/20180322/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="LeetCode twoSum" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/20180322/" />
+
+
+
+<meta property="article:published_time" content="2018-03-22T23:17:05&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-22T23:17:05&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="LeetCode twoSum">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2018-03-22T23:17:05&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-22T23:17:05&#43;08:00" />
+<meta itemprop="wordCount" content="499">
+
+
+
+<meta itemprop="keywords" content="leetcode twosum 游标," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode twoSum"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Mddct</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Mddct</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">LeetCode twoSum</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/leetcode/"> leetcode </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#twosum">twoSum</a>
+<ul>
+<li><a href="#解法一-暴力">解法一：暴力</a></li>
+<li><a href="#解法二-查找表">解法二：查找表</a></li>
+<li><a href="#解法三-排序-游标">解法三：排序 游标</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p></p>
+
+<h1 id="twosum">twoSum</h1>
+
+<blockquote>
+<p>题目大意：给定数组和target，判断数组中是否存在索引 i，j：
+-   s[i] + s[j] == target
+-   i != j</p>
+
+<p>分析： a + b = target，如何遍历得到 a和b 。</p>
+</blockquote>
+
+<h2 id="解法一-暴力">解法一：暴力</h2>
+
+<ul>
+<li>定义 (i, j)， j  &gt; i. i &isin; [0,len(s)), j &isin; [i+1, len(s))</li>
+<li>暴力，二重循环，时间复杂度O(n<sup>2</sup>)</li>
+</ul>
+
+<pre><code class="language-go">func twoSum(nums []int, target int) []int {
+    for i := 0; i &lt; len(nums); i++{
+        for j := i+1; j &lt; len(nums); j++{
+            if a[i] + a[j] == target{
+                return []int{i, j}
+            }
+        }
+    }
+    return []{-1,-1}
+}
+</code></pre>
+
+<h2 id="解法二-查找表">解法二：查找表</h2>
+
+<p>在无序数组中查找元素，遍历，解法一就是在[i+1,len(s))中查找是否存在target-s[i],如果该查找时间复杂度优化为O(1),则总时间复杂度为O(n)</p>
+
+<ul>
+<li>使用map存 [i+1, len(s)]中 的元素，查找target-s[i]</li>
+<li>也可以map存 [0,i) 中元素，查询target-s[i]</li>
+</ul>
+
+<pre><code class="language-golang">func twoSum(nums []int, target int) []int
+    m := make(map[int]int)
+    for i := 0; i &lt; len(nums); i++{
+        // [0, i]
+        if v, ok := m[target - nums[i]]; ok{
+            return []int{v,i}
+        }
+        m[nums[i]]=i
+    }
+    return []int{-1,-1
+}
+</code></pre>
+
+<h2 id="解法三-排序-游标">解法三：排序 游标</h2>
+
+<p>考虑 a + b， a &lt; b， b是数组中最大的元素， a是数组中最小的元素
+- 若 a + b &lt; target, 则a大一点则可能a+b = target
+- 若 a + b &gt; target, 则b小一点则可能a+b = target</p>
+
+<p>可以考虑游标，有序数组上控制[i,j]，使得当前范围内,s[i]最小，s[j]最大</p>
+
+<pre><code class="language-go">func twoSum(nums []int, target int){
+    sort.Ints(nums)
+    for i, j := 0, len(nums)-1; i &lt; j; {
+        if nums[i] + nums[j] == target{
+            return []int{i, j}
+        }else if nums[i] + nums[j] &lt; target{
+            i++
+        }else{
+            j--
+        }
+    }
+    return []int{-1, -1}
+}
+</code></pre>
+
+<p>时间复杂O(nlogn)</p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mddct</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-22</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/leetcode-twosum-%E6%B8%B8%E6%A0%87/">leetcode twosum 游标</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/20180316/">
+            <span class="next-text nav-default">hugo&#43;github pages 搭建博客</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mddct</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

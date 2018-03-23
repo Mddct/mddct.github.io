@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mddct - Blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Mddct - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>女朋友真好,宝宝好好上课。</description>
+    </item>
+    
+    <item>
+      <title>LeetCode twoSum</title>
+      <link>http://localhost:1313/post/20180322/</link>
+      <pubDate>Thu, 22 Mar 2018 23:17:05 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/20180322/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo&#43;github pages 搭建博客</title>
+      <link>http://localhost:1313/post/20180316/</link>
+      <pubDate>Fri, 16 Mar 2018 10:26:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/20180316/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;hugo 静态博客系统，golang编写。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
