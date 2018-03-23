@@ -5,8 +5,9 @@
 
 
 > 题目大意：给定数组和target，判断数组中是否存在索引 i，j：
-> -   s[i] + s[j] == target
-> -   i != j
+
+>- s[i] + s[j] == target
+>- i != j
 
 
 
