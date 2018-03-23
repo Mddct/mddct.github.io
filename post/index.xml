@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mddct - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Mar 2018 23:17:05 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 11:33:39 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode Add Two Numbers</title>
+      <link>http://localhost:1313/post/20180323/</link>
+      <pubDate>Fri, 23 Mar 2018 11:33:39 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/20180323/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>LeetCode twoSum</title>
