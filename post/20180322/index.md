@@ -45,7 +45,7 @@ func twoSum(nums []int, target int) []int
         }
         m[nums[i]]=i
     }
-    return []int{-1,-1
+    return []int{-1,-1}
 }
 ```
 
