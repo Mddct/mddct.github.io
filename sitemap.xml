@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/post/20180325/</loc>
+    <lastmod>2018-03-25T10:54:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/20180323_1/</loc>
     <lastmod>2018-03-23T18:22:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -66,7 +73,7 @@
   
   <url>
     <loc>http://localhost:1313/categories/leetcode/</loc>
-    <lastmod>2018-03-23T18:22:47+08:00</lastmod>
+    <lastmod>2018-03-25T10:54:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -74,6 +81,13 @@
   <url>
     <loc>http://localhost:1313/tags/leetcode-twosum-%E6%B8%B8%E6%A0%87/</loc>
     <lastmod>2018-03-22T23:17:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/leetcode-%E4%BA%8C%E5%88%86/</loc>
+    <lastmod>2018-03-25T10:54:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -87,7 +101,7 @@
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-03-23T18:22:47+08:00</lastmod>
+    <lastmod>2018-03-25T10:54:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
