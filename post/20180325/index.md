@@ -47,7 +47,7 @@ func findKthSortedArrays(nums1, nums2 []int, k int) int {
 
 ```
 # 二分
-题目提示log级别，考虑“二分”，l = len(nums1) + len(nums2), p1 = \frac{l}{2}, p2 =l-p1 
+题目提示log级别，考虑“二分”，l = len(nums1) + len(nums2), p1 = $$\frac{l}{2}$$, p2 =l-p1 
 
 -   l 可能为奇数 偶数， 则实现发现第k大的数：findKthSortedArrays
 -   nums1[p1-1] <= nums1[p2-1] 则可以考虑扔掉p1之前的元素，findKthSortedArrays（nums1[p1:], nums2, k-p1）
