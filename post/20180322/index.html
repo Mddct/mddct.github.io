@@ -77,7 +77,7 @@
 
 <meta itemprop="datePublished" content="2018-03-22T23:17:05&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-22T23:17:05&#43;08:00" />
-<meta itemprop="wordCount" content="497">
+<meta itemprop="wordCount" content="525">
 
 
 
@@ -250,18 +250,25 @@
 
 <p>可以考虑游标，有序数组上控制[i,j]，使得当前范围内,s[i]最小，s[j]最大</p>
 
-<pre><code class="language-go">func twoSum(nums []int, target int){
-    sort.Ints(nums)
-    for i, j := 0, len(nums)-1; i &lt; j; {
-        if nums[i] + nums[j] == target{
-            return []int{i, j}
-        }else if nums[i] + nums[j] &lt; target{
-            i++
-        }else{
-            j--
-        }
-    }
-    return []int{-1, -1}
+<pre><code class="language-go">func twoSum(nums []int, target int) []int {
+	pos := make([]int, len(nums))
+	for i := range pos {
+		pos[i] = i
+	}
+	sort.Slice(pos, func(i, j int) bool {
+		return nums[pos[i]] &lt; nums[pos[j]]
+	})
+	fmt.Println(pos)
+	for i, j := 0, len(nums)-1; i &lt; j; {
+		if nums[pos[i]]+nums[pos[j]] == target {
+			return []int{pos[i], pos[j]}
+		} else if nums[pos[i]]+nums[pos[j]] &gt; target {
+			j--
+		} else {
+			i++
+		}
+	}
+	return []int{-1, -1}
 }
 </code></pre>
 

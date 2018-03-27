@@ -56,18 +56,25 @@ func twoSum(nums []int, target int) []int
 
 可以考虑游标，有序数组上控制[i,j]，使得当前范围内,s[i]最小，s[j]最大
 ```go
-func twoSum(nums []int, target int){
-    sort.Ints(nums)
-    for i, j := 0, len(nums)-1; i < j; {
-        if nums[i] + nums[j] == target{
-            return []int{i, j}
-        }else if nums[i] + nums[j] < target{
-            i++
-        }else{
-            j--
-        }
-    }
-    return []int{-1, -1}
+func twoSum(nums []int, target int) []int {
+	pos := make([]int, len(nums))
+	for i := range pos {
+		pos[i] = i
+	}
+	sort.Slice(pos, func(i, j int) bool {
+		return nums[pos[i]] < nums[pos[j]]
+	})
+	fmt.Println(pos)
+	for i, j := 0, len(nums)-1; i < j; {
+		if nums[pos[i]]+nums[pos[j]] == target {
+			return []int{pos[i], pos[j]}
+		} else if nums[pos[i]]+nums[pos[j]] > target {
+			j--
+		} else {
+			i++
+		}
+	}
+	return []int{-1, -1}
 }
 ```
 时间复杂O(nlogn)
