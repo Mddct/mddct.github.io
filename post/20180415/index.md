@@ -2,9 +2,8 @@
 
 
 > Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. 
-# Table of Contents
 
-
+# 暴力
 -   暴力：[i, j] ，遍历i， j O(n<sup>2</sup>), 判断[i,j]回文O(n<sup>2</sup>), 总时间复杂度O(n<sup>3</sup>)
 -   优化一： 对于第i个元素，考虑以i为中心的元素是否为回文（[l,i] [i, r] ）；或者[l,i] [i+1, r] 回文。时间复杂度O(n<sup>2</sup>)
 ```go
@@ -41,7 +40,7 @@ func longestPalindrome(s string) string {
 
 ```
 
-
+# Manacher’s algorithm
 -   优化二 [Manacher’s algorithm](https://articles.leetcode.com/longest-palindromic-substring-part-ii/)
 ```go
 
