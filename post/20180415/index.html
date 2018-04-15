@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>LeetCode Longest Substring Without Repeating Characters - Mddct - Blog</title>
+  <title>Leetcodei Longest Palindromic Substring - Mddct - Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -19,7 +19,7 @@
 <meta name="author" content="mddct" />
   <meta name="description" content="
 " />
-<meta name="keywords" content="LeetCode 滑动窗口" />
+<meta name="keywords" content="Leetcode 暴力回文" />
 
 
 
@@ -30,7 +30,7 @@
 <meta name="generator" content="Hugo 0.38.2" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/20180323_1/" />
+<link rel="canonical" href="http://localhost:1313/post/20180415/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,20 +50,16 @@
 
 
 
-<meta property="og:title" content="LeetCode Longest Substring Without Repeating Characters" />
+<meta property="og:title" content="Leetcodei Longest Palindromic Substring" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/20180323_1/" />
+<meta property="og:url" content="http://localhost:1313/post/20180415/" />
 
 
 
-<meta property="article:published_time" content="2018-03-23T18:22:47&#43;08:00"/>
+<meta property="article:published_time" content="2018-04-15T11:37:27&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-03-23T18:22:47&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-04-15T11:37:27&#43;08:00"/>
 
 
 
@@ -71,19 +67,23 @@
 
 
 
-<meta itemprop="name" content="LeetCode Longest Substring Without Repeating Characters">
+
+
+
+
+<meta itemprop="name" content="Leetcodei Longest Palindromic Substring">
 <meta itemprop="description" content="">
 
 
-<meta itemprop="datePublished" content="2018-03-23T18:22:47&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-23T18:22:47&#43;08:00" />
-<meta itemprop="wordCount" content="289">
+<meta itemprop="datePublished" content="2018-04-15T11:37:27&#43;08:00" />
+<meta itemprop="dateModified" content="2018-04-15T11:37:27&#43;08:00" />
+<meta itemprop="wordCount" content="448">
 
 
 
-<meta itemprop="keywords" content="LeetCode," />
+<meta itemprop="keywords" content="Leetcode," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LeetCode Longest Substring Without Repeating Characters"/>
+<meta name="twitter:title" content="Leetcodei Longest Palindromic Substring"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -151,13 +151,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">LeetCode Longest Substring Without Repeating Characters</h1>
+      <h1 class="post-title">Leetcodei Longest Palindromic Substring</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-03-23 </span>
+        <span class="post-time"> 2018-04-15 </span>
         <div class="post-category">
             
-              <a href="/categories/leetcode/"> LeetCode </a>
+              <a href="/categories/leetcode/"> Leetcode </a>
             
           </div>
         
@@ -167,86 +167,171 @@
 
     
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</nav>
+  </div>
+</div>
 
     
     <div class="post-content">
       <p></p>
 
-<h1 id="整体思路">整体思路</h1>
+<blockquote>
+<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+
+<h1 id="table-of-contents">Table of Contents</h1>
+</blockquote>
 
 <ul>
-<li>当前滑动窗口保持[i,j)  之间不重复</li>
-<li>当s[j]依旧不重复，则j++</li>
-<li>当s[j]发生重复，需要变动i。使得新的滑动窗口内不重复。</li>
-</ul>
-
-<h1 id="如何判断重复">如何判断重复</h1>
-
-<ul>
-<li>set // go中用map[byte]struct{} 模拟set</li>
-<li>在保持循环不变式中，i右滑时，注意删除“划过去的元素”。（因为set保存的是[i,j)之间的不重复元素，也是个不变式）</li>
-</ul>
-
-<p>note：循环不变式，有助于写出正确的算法，包括边界。</p>
-
-<p>时间复杂度O(n),注意循环不变式[i,j) 时刻保持当前滑动窗口不重复。</p>
-
-<pre><code class="language-go">func lengthOfLongestSubstring(s string) int {
-  //[)
-  i, j := 0, 0
-  cl := 0
-  ml := 0 
-  // 模拟set
-  set := make(map[byte]struct{})
-  for j &lt; len(s){
-    if _, ok := set[s[j]]; !ok{
-      set[s[j]] =  struct{}{}
-      j++
-      cl = j-i
-      if cl &gt; ml{
-        ml = cl
-      }
-    }else{
-      if s[i] != s[j]{
-        delete(set, s[i])
-      }else{
-        j++
-      }
-      i++
+<li>暴力：[i, j] ，遍历i， j O(n<sup>2</sup>), 判断[i,j]回文O(n<sup>2</sup>), 总时间复杂度O(n<sup>3</sup>)</li>
+<li>优化一： 对于第i个元素，考虑以i为中心的元素是否为回文（[l,i] [i, r] ）；或者[l,i] [i+1, r] 回文。时间复杂度O(n<sup>2</sup>)
+```go
+func maxPalindrome(s string, left, right int) (int, int) {
+    for left &gt;= 0 &amp;&amp; right &lt; len(s) {
+            if s[left] == s[right] {
+                    left&ndash;
+                    right++
+            }else{
+                    break
+            }
     }
-		
-  }
-  return ml
+    // [left, right]
+    return left + 1, right - 1
+}
+func longestPalindrome(s string) string {
+    l, r := 0, 0
+    for i := 0; i &lt; len(s); i++ {
+            // [0, s)
+            nl, nr := maxPalindrome(s, i, i)
+            if nr-nl &gt; r-l {
+                    l = nl
+                    r = nr
+            }
+nl, nr = maxPalindrome(s, i, i+1)
+if nr-nl &gt; r-l {
+                    l = nl
+                    r = nr
+}
+    }
+    return s[l : r+1]
+}</li>
+</ul>
+
+<pre><code>
+
+-   优化二 [Manacher’s algorithm](https://articles.leetcode.com/longest-palindromic-substring-part-ii/)
+```go
+
+
+func preProcess(s string) string {
+	if len(s) == 0 {
+		return &quot;^$&quot;
+	}
+	ret := &quot;^&quot;
+	for i := 0; i &lt; len(s); i++ {
+		ret += &quot;#&quot; + fmt.Sprintf(&quot;%c&quot;, s[i])
+	}
+	ret += &quot;#$&quot;
+	return ret
+
+}
+func longestPalindrome(s string) string {
+	T := preProcess(s)
+	p := make([]int, len(T))
+	C, r := 0, 0
+	for i := 1; i &lt; len(T)-1; i++ {
+		iMirror := 2*C - i
+		if r-i &gt; 0 {
+			p[i] = p[iMirror]
+			if p[i] &gt; r-i {
+				p[i] = r - i
+			}
+		}
+		// else p[i] = 0
+		for T[i+p[i]+1] == T[i-p[i]-1] {
+			p[i]++
+		}
+
+		if i+p[i] &gt; r {
+			r = i + p[i]
+			C = i
+		}
+	}
+	maxLen := 0
+	curIndex := 0
+	for i := 0; i &lt; len(p); i++ {
+		if maxLen &lt; p[i] {
+			maxLen = p[i]
+			curIndex = i
+		}
+	}
+    start := (curIndex - 1- maxLen) /2
+    return s[start:start+maxLen]
+
 }
 
-
 </code></pre>
+
+<ul>
+<li>动态规划 时间复杂度O(n<sup>2</sup>)</li>
+</ul>
+
+<p>dp[i][j] = dp[i+1][j-1] <code>= 1 &amp;&amp; s[i] =</code> s[j]
+遍历整个二维数组，找出max（j-i）and dp[i][j] == 1</p>
+
+<pre><code class="language-go"></code></pre>
     </div>
 
     
-    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mddct</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-04-15</span>
+  </p>
+  
+  
+</div>
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/IMG_2442.JPG">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
 
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/leetcode/">LeetCode</a>
+          <a href="/tags/leetcode/">Leetcode</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/20180325/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">LeetCode Median of Two Sorted Arrays</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/20180323/">
-            <span class="next-text nav-default">LeetCode Add Two Numbers</span>
+          <a class="next" href="/post/20180325/">
+            <span class="next-text nav-default">LeetCode Median of Two Sorted Arrays</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -255,6 +340,7 @@
   </article>
         </div>
         
+  
       </div>
     </main>
 
