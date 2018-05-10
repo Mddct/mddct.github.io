@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>LeetCode Add Two Numbers - Mddct - Blog</title>
+  <title>20180510 - Mddct - Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -19,8 +19,8 @@
 <meta name="author" content="mddct" />
   <meta name="description" content="
 " />
+<meta name="keywords" content="leetcode zig-zag" />
 
-  <meta name="keywords" content="Hugo, theme, Mddct" />
 
 
 
@@ -30,7 +30,7 @@
 <meta name="generator" content="Hugo 0.40.2" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/20180323/" />
+<link rel="canonical" href="http://localhost:1313/post/20180510/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,20 +50,16 @@
 
 
 
-<meta property="og:title" content="LeetCode Add Two Numbers" />
+<meta property="og:title" content="20180510" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/20180323/" />
+<meta property="og:url" content="http://localhost:1313/post/20180510/" />
 
 
 
-<meta property="article:published_time" content="2018-03-23T11:33:39&#43;08:00"/>
+<meta property="article:published_time" content="2018-05-11T05:20:18&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-03-23T11:33:39&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-05-11T05:20:18&#43;08:00"/>
 
 
 
@@ -71,19 +67,23 @@
 
 
 
-<meta itemprop="name" content="LeetCode Add Two Numbers">
+
+
+
+
+<meta itemprop="name" content="20180510">
 <meta itemprop="description" content="">
 
 
-<meta itemprop="datePublished" content="2018-03-23T11:33:39&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-23T11:33:39&#43;08:00" />
-<meta itemprop="wordCount" content="214">
+<meta itemprop="datePublished" content="2018-05-11T05:20:18&#43;08:00" />
+<meta itemprop="dateModified" content="2018-05-11T05:20:18&#43;08:00" />
+<meta itemprop="wordCount" content="239">
 
 
 
-<meta itemprop="keywords" content="LeetCode," />
+<meta itemprop="keywords" content="leetcode zig-zag," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LeetCode Add Two Numbers"/>
+<meta name="twitter:title" content="20180510"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -151,13 +151,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">LeetCode Add Two Numbers</h1>
+      <h1 class="post-title">20180510</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-03-23 </span>
+        <span class="post-time"> 2018-05-11 </span>
         <div class="post-category">
             
-              <a href="/categories/leetcode/"> LeetCode </a>
+              <a href="/categories/leetcode/"> leetcode </a>
             
           </div>
         
@@ -171,11 +171,7 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#思路">思路</a></li>
-</ul>
-</nav>
+    
   </div>
 </div>
 
@@ -183,63 +179,69 @@
     <div class="post-content">
       <p></p>
 
-<h1 id="思路">思路</h1>
-
-<p>当前构造的节点 node.Val = l1.Val + l2.Val + carry :</p>
-
 <ul>
-<li>如果 carry <code>= 0 &amp;&amp; l| =</code> nil &amp;&amp; l2 == nil, 则不需要构造节点，已经算到了最后一位</li>
-<li>表示当前节点：prev.Next (使用dummy head; 第一次也有了前驱节点）</li>
+<li><p>The string &ldquo;PAYPALISHIRING&rdquo; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+
+<pre><code>
+P   A   H   N
+A P L S I I G
+Y   I   R
+</code></pre></li>
 </ul>
 
-<p>时间复杂度: l1长度m，l2长度n。 O(m+n)=O(max(m,n))</p>
+<p>And then read line by line: &ldquo;PAHNAPLSIIGYIR&rdquo;</p>
 
-<pre><code class="language-go">/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	
-  carry := 0
+<pre><code class="language-go">func convert(s string, numRows int) string {
+    if numRows == 1 || numRows &gt;= len(s){
+        return s
+    }
+    ret := &quot;&quot;
+    first, second := 2 * numRows-2, 0
+    for cr := 0; cr &lt; numRows; cr ++{
+        ret += fmt.Sprintf(&quot;%c&quot;, s[cr])
+        for i := cr+first;  i &lt; len(s) ; {
+            if first != 0{
+                ret += fmt.Sprintf(&quot;%c&quot;, s[i])   
+            }
+            if second != 0{
+               i += second
+                 if i &gt;= len(s){
+                  break
+            }
+            ret += fmt.Sprintf(&quot;%c&quot;, s[i]) 
+            }
 
-  // dummy head
-  var head  ListNode
-  p := &amp;head
-  for {
-		
-    if carry == 0 &amp;&amp; l1 == nil &amp;&amp; l2 == nil{
-      break
+
+            // next 
+            i += first
+        } 
+        first -= 2
+        second += 2
+        //fmt.Println()
     }
-		
-    var ns int
-    ns += carry
-    if l1 != nil{
-      ns += l1.Val
-      l1 = l1.Next
-    }
-    if l2 != nil{
-      ns += l2.Val
-      l2 = l2.Next
-    }
-		
-    if ns &gt;= 10{
-      ns -= 10
-      carry = 1
-    }else{
-      carry = 0
-    }
-		
-    p.Next = &amp;ListNode{
-      Val: ns,
-    }
-    p = p.Next
-		
-  }
-  return head.Next
+    return ret
 }
+/*
+PAYPALISHIRING
+0     6       12       18   // 6 0
+1   5 7    11 13    17 19   // 4 2
+2 4   8 10    14 16         // 2 4
+3     9       15            // 0 6
+
+0   4   8     12          // 4 0
+1 3 5 7 9  11 13          // 2 2 
+2   6   10                // 0 4 
+
+
+0     8               // 8 0
+1   7 9        15        // 6 2
+2  6  10    14             // 4 4 
+3 5   11 13
+4     12 
+*/
+
+
+// 复仇者联盟3真好看
 </code></pre>
     </div>
 
@@ -251,7 +253,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-03-23</span>
+    <span class="item-content">2018-05-11</span>
   </p>
   
   
@@ -276,21 +278,16 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/leetcode/">LeetCode</a>
+          <a href="/tags/leetcode-zig-zag/">leetcode zig-zag</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/20180323_1/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">LeetCode Longest Substring Without Repeating Characters</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/20180322/">
-            <span class="next-text nav-default">LeetCode twoSum</span>
+          <a class="next" href="/post/20180415/">
+            <span class="next-text nav-default">Leetcodei Longest Palindromic Substring</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcode Zig Zag on Mddct - Blog</title>
+    <link>http://localhost:1313/tags/leetcode-zig-zag/</link>
+    <description>Recent content in Leetcode Zig Zag on Mddct - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 May 2018 05:20:18 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/leetcode-zig-zag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>20180510</title>
+      <link>http://localhost:1313/post/20180510/</link>
+      <pubDate>Fri, 11 May 2018 05:20:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/20180510/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

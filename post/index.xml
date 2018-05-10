@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mddct - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Apr 2018 11:37:27 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 May 2018 05:20:18 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>20180510</title>
+      <link>http://localhost:1313/post/20180510/</link>
+      <pubDate>Fri, 11 May 2018 05:20:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/20180510/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcodei Longest Palindromic Substring</title>
