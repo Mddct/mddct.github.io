@@ -86,15 +86,15 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/leetcode/</loc>
-    <lastmod>2018-05-11T05:48:19+08:00</lastmod>
+    <loc>http://localhost:1313/tags/leetcode/</loc>
+    <lastmod>2018-04-15T11:37:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/leetcode/</loc>
-    <lastmod>2018-04-15T11:37:27+08:00</lastmod>
+    <loc>http://localhost:1313/categories/leetcode/</loc>
+    <lastmod>2018-05-11T05:48:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
