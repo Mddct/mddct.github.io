@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据分析 on Mddct - Blog</title>
+    <link>http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 数据分析 on Mddct - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 May 2018 09:09:44 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>第十批千人计划数据分析</title>
+      <link>http://localhost:1313/post/201805028/</link>
+      <pubDate>Sat, 26 May 2018 09:09:44 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/201805028/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

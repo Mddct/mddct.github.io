@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Leetcode Reverse Integer - Mddct - Blog</title>
+  <title>第十批千人计划数据分析 - Mddct - Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -19,8 +19,8 @@
 <meta name="author" content="mddct" />
   <meta name="description" content="
 " />
+<meta name="keywords" content="千人计划 数据分析" />
 
-  <meta name="keywords" content="Hugo, theme, Mddct" />
 
 
 
@@ -30,7 +30,7 @@
 <meta name="generator" content="Hugo 0.40.2" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/201805010_1/" />
+<link rel="canonical" href="http://localhost:1313/post/201805028/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,20 +50,16 @@
 
 
 
-<meta property="og:title" content="Leetcode Reverse Integer" />
+<meta property="og:title" content="第十批千人计划数据分析" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/201805010_1/" />
+<meta property="og:url" content="http://localhost:1313/post/201805028/" />
 
 
 
-<meta property="article:published_time" content="2018-05-11T05:48:19&#43;08:00"/>
+<meta property="article:published_time" content="2018-05-26T09:09:44&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-05-11T05:48:19&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-05-26T09:09:44&#43;08:00"/>
 
 
 
@@ -71,19 +67,23 @@
 
 
 
-<meta itemprop="name" content="Leetcode Reverse Integer">
+
+
+
+
+<meta itemprop="name" content="第十批千人计划数据分析">
 <meta itemprop="description" content="">
 
 
-<meta itemprop="datePublished" content="2018-05-11T05:48:19&#43;08:00" />
-<meta itemprop="dateModified" content="2018-05-11T05:48:19&#43;08:00" />
-<meta itemprop="wordCount" content="112">
+<meta itemprop="datePublished" content="2018-05-26T09:09:44&#43;08:00" />
+<meta itemprop="dateModified" content="2018-05-26T09:09:44&#43;08:00" />
+<meta itemprop="wordCount" content="985">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="数据分析," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Leetcode Reverse Integer"/>
+<meta name="twitter:title" content="第十批千人计划数据分析"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -151,13 +151,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Leetcode Reverse Integer</h1>
+      <h1 class="post-title">第十批千人计划数据分析</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-05-11 </span>
+        <span class="post-time"> 2018-05-26 </span>
         <div class="post-category">
             
-              <a href="/categories/leetcode/"> leetcode </a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"> 数据分析 </a>
             
           </div>
         
@@ -171,7 +171,21 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#分析步骤">分析步骤</a></li>
+<li><a href="#分析结果">分析结果</a>
+<ul>
+<li><a href="#专业领域">专业领域</a></li>
+<li><a href="#籍贯分布1">籍贯分布1</a></li>
+<li><a href="#籍贯分布2">籍贯分布2</a></li>
+<li><a href="#男女数量">男女数量</a></li>
+<li><a href="#推荐单位">推荐单位</a></li>
+<li><a href="#more-todo">More [TODO]</a></li>
+</ul></li>
+<li><a href="#js代码">js代码</a></li>
+</ul>
+</nav>
   </div>
 </div>
 
@@ -179,31 +193,224 @@
     <div class="post-content">
       <p></p>
 
-<blockquote>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-</blockquote>
+<h1 id="分析步骤">分析步骤</h1>
 
-<p>题目简单，注意溢出处理，同时看golang minint32 maxint32等如何使用</p>
+<pre><code class="language-sequence">Title: 第十批千人计划test
+test-&gt;test1: test
+test1--&gt;test2: test
+test2-&gt;&gt;test3: test
+test3--&gt;&gt;test: test
+</code></pre>
 
-<pre><code class="language-go">func reverse(x int) int {
-    sign := 1
-    if x &lt; 0{
-        sign = -1
-        x = -x
-    }
-    ret := int64(0)
-    for x != 0{
-        ret = ret *10 + int64(x % 10)
-        x /= 10
-    }
-    ret *= int64(sign)
-    if ret &gt; math.MaxInt32 || ret &lt; math.MinInt32{
-        return 0
-    }
-    return int(ret)
+<h1 id="分析结果">分析结果</h1>
+
+<h2 id="专业领域">专业领域</h2>
+
+<p><img src="/2pic.jpg" alt="专业领域" title="img" /></p>
+
+<h2 id="籍贯分布1">籍贯分布1</h2>
+
+<p><img src="/3pic.jpg" alt="籍贯分布" title="img" /></p>
+
+<h2 id="籍贯分布2">籍贯分布2</h2>
+
+<p><img src="/6pic.jpg" alt="籍贯分布2" title="img" /></p>
+
+<h2 id="男女数量">男女数量</h2>
+
+<p><img src="/4pic.jpg" alt="男女数量" title="img" /></p>
+
+<h2 id="推荐单位">推荐单位</h2>
+
+<p><img src="/5pic.jpg" alt="推荐单位" title="img" /></p>
+
+<h2 id="more-todo">More [TODO]</h2>
+
+<h1 id="js代码">js代码</h1>
+
+<pre><code class="language-js">option1 = {
+backgroundColor: '#6c343c',
+
+title: {
+text: '籍贯分布不完全统计',
+left: 'center',
+top: 20,
+textStyle: {
+color: '#ccc'
 }
+},
 
-// 强烈推荐看复仇者联盟3
+tooltip : {
+trigger: 'item',
+formatter: &quot;{a} &lt;br/&gt;{b} : {c} ({d}%)&quot;
+},
+
+visualMap: {
+show: false,
+min: 80,
+max: 600,
+inRange: {
+colorLightness: [0, 1]
+}
+},
+series : [
+{
+name:'访问来源',
+type:'pie',
+radius : '55%',
+center: ['50%', '50%'],
+data:[
+{value:7, name:'安徽'},
+{value:12, name:'江苏'},
+{value:12, name:'浙江'},
+{value:8, name:'湖北'},
+{value:7, name:'湖南'},
+{value:5, name:'山东'},
+{value:5, name:'四川'},
+{value:5, name:'辽宁'},
+{value:4, name:'河南'},
+{value:4, name:'上海'},
+{value:6, name:'美籍'},
+{value:4, name:'福建'},
+{value:3, name:'河北'},
+{value:2, name:'重庆'},
+{value:2, name:'江西'}
+].sort(function (a, b) { return a.value - b.value; }),
+roseType: 'radius',
+label: {
+normal: {
+textStyle: {
+color: 'rgba(255, 255, 255, 0.3)'
+}
+}
+},
+labelLine: {
+normal: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.3)'
+},
+smooth: 0.2,
+length: 10,
+length2: 20
+}
+},
+itemStyle: {
+normal: {
+color: '#000000',
+shadowBlur: 200,
+shadowColor: 'rgba(0, 0, 0, 0.5)'
+}
+},
+
+animationType: 'scale',
+animationEasing: 'elasticOut',
+animationDelay: function (idx) {
+return Math.random() * 200;
+}
+}
+]
+};
+
+
+
+
+
+
+option2 = {
+title: {
+text: '推荐单位统计',
+subtext: '数据'
+},
+tooltip: {
+trigger: 'axis',
+axisPointer: {
+type: 'shadow'
+}
+},
+legend: {
+
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'value',
+boundaryGap: [0, 0.01]
+},
+yAxis: {
+type: 'category',
+data: ['复旦大学','上海交通大学','北京大学',
+'中国科学技术大学','清华大学','南京大学','中南大学','浙江大学'
+,'哈尔滨工业大学','同济大学','中国科学院上海生命科学研究院','中航商用航空发动机有限责任公司','西安交通大学',
+'上海交通大学','华东理工大学','中山大学','华中科技大学','四川大学','大连理工大学']
+},
+series: [
+
+{
+name: '推荐单位统计',
+type: 'bar',
+data: [138, 33, 28, 31, 17, 10,8,13,8,11,8,6,6,6,5,5,6,5,5]
+}
+]
+};
+
+
+
+
+
+
+var  option = {
+title : {
+text: '姓氏统计',
+subtext: '选取了数量较多的几种姓氏',
+x:'center'
+},
+tooltip : {
+trigger: 'item',
+formatter: &quot;{a} &lt;br/&gt;{b} : {c} ({d}%)&quot;
+},
+legend: {
+orient: 'vertical',
+left: 'left',
+data: ['王','李','张','陈','刘','徐','黄','周','赵','杨','孙','朱','吴','肖','马','陆',]
+},
+series : [
+{
+name: '访问来源',
+type: 'pie',
+radius : '55%',
+center: ['50%', '60%'],
+data:[
+{value:43, name:'王'},
+{value:34, name:'李'},
+{value:29, name:'张'},
+{value:28, name:'陈'},
+{value:28, name:'刘'},
+{value:16, name:'徐'},
+{value:16, name:'黄'},
+{value:15, name:'周'},
+{value:13, name:'赵'},
+{value:12, name:'杨'},
+{value:11, name:'孙'},
+{value:10, name:'朱'},
+{value:9, name:'吴'},
+{value:8, name:'肖'},
+{value:7, name:'马'},
+{value:6, name:'陆'},
+],
+itemStyle: {
+emphasis: {
+shadowBlur: 10,
+shadowOffsetX: 0,
+shadowColor: 'rgba(0, 0, 0, 0.5)'
+}
+}
+}
+]
+};
 </code></pre>
     </div>
 
@@ -215,7 +422,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-11</span>
+    <span class="item-content">2018-05-26</span>
   </p>
   
   
@@ -238,19 +445,18 @@
 </div>
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
+          
+        </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/201805028/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">第十批千人计划数据分析</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/20180510/">
-            <span class="next-text nav-default">Leetcode zig-zag</span>
+          <a class="next" href="/post/201805010_1/">
+            <span class="next-text nav-default">Leetcode Reverse Integer</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

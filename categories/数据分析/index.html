@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Leetcode Reverse Integer - Mddct - Blog</title>
+  <title>数据分析 · Mddct - Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,9 +17,7 @@
 
 
 <meta name="author" content="mddct" />
-  <meta name="description" content="
-" />
-
+  <meta name="description" content="My Blog" />
   <meta name="keywords" content="Hugo, theme, Mddct" />
 
 
@@ -30,7 +28,9 @@
 <meta name="generator" content="Hugo 0.40.2" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/201805010_1/" />
+<link rel="canonical" href="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" />
+<link href="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/index.xml" rel="alternate" type="application/rss+xml" title="Mddct - Blog" />
+  <link href="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/index.xml" rel="feed" type="application/rss+xml" title="Mddct - Blog" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,16 +50,14 @@
 
 
 
-<meta property="og:title" content="Leetcode Reverse Integer" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/201805010_1/" />
+<meta property="og:title" content="数据分析" />
+<meta property="og:description" content="My Blog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" />
 
 
 
-<meta property="article:published_time" content="2018-05-11T05:48:19&#43;08:00"/>
-
-<meta property="article:modified_time" content="2018-05-11T05:48:19&#43;08:00"/>
+<meta property="og:updated_time" content="2018-05-26T09:09:44&#43;08:00"/>
 
 
 
@@ -70,21 +68,12 @@
 
 
 
+<meta itemprop="name" content="数据分析">
+<meta itemprop="description" content="My Blog">
 
-<meta itemprop="name" content="Leetcode Reverse Integer">
-<meta itemprop="description" content="">
-
-
-<meta itemprop="datePublished" content="2018-05-11T05:48:19&#43;08:00" />
-<meta itemprop="dateModified" content="2018-05-11T05:48:19&#43;08:00" />
-<meta itemprop="wordCount" content="112">
-
-
-
-<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Leetcode Reverse Integer"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="数据分析"/>
+<meta name="twitter:description" content="My Blog"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -148,120 +137,38 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Leetcode Reverse Integer</h1>
+          
 
-      <div class="post-meta">
-        <span class="post-time"> 2018-05-11 </span>
-        <div class="post-category">
-            
-              <a href="/categories/leetcode/"> leetcode </a>
-            
-          </div>
-        
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+<section id="archive" class="archive">
+  
+    
+      <div class="archive-title category">
+        <h2 class="archive-name">数据分析</h2>
       </div>
-    </header>
-
     
-    
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
   
-  <div class="post-toc-content always-active">
-    
-  </div>
-</div>
 
-    
-    <div class="post-content">
-      <p></p>
-
-<blockquote>
-<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
-</blockquote>
-
-<p>题目简单，注意溢出处理，同时看golang minint32 maxint32等如何使用</p>
-
-<pre><code class="language-go">func reverse(x int) int {
-    sign := 1
-    if x &lt; 0{
-        sign = -1
-        x = -x
-    }
-    ret := int64(0)
-    for x != 0{
-        ret = ret *10 + int64(x % 10)
-        x /= 10
-    }
-    ret *= int64(sign)
-    if ret &gt; math.MaxInt32 || ret &lt; math.MinInt32{
-        return 0
-    }
-    return int(ret)
-}
-
-// 强烈推荐看复仇者联盟3
-</code></pre>
+  
+    <div class="archive-post">
+      <span class="archive-post-time">
+        2018-05-26
+      </span>
+      <span class="archive-post-title">
+        <a href="/post/201805028/" class="archive-post-link">
+          第十批千人计划数据分析
+        </a>
+      </span>
     </div>
+  
+</section>
 
-    
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">mddct</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-11</span>
-  </p>
+<nav class="pagination">
   
   
-</div>
+</nav>
 
-    
-    
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/IMG_2442.JPG">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
-
-    <footer class="post-footer">
-      
-
-      
-      <nav class="post-nav">
-        
-          <a class="prev" href="/post/201805028/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">第十批千人计划数据分析</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/20180510/">
-            <span class="next-text nav-default">Leetcode zig-zag</span>
-            <span class="prev-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
         </div>
         
-  
-
-  
 
       </div>
     </main>
@@ -305,12 +212,7 @@
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script><script>window.sequenceDiagramsOptions = {theme:'hand'};</script>
-<script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
 
 
