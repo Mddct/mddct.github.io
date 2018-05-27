@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="mddct" />
-  <meta name="description" content="           var dom = document.getElementById(&#34;containerTest&#34;); var myChart = echarts.init(dom); var app = {}; option = null; var builderJson = { &#34;all&#34;: 22, &#34;charts&#34;: { &#34;上海交通大学&#34;: 10, &#34;华东理工大学&#34;: 5, &#34;中航商用航空发动机有限责任公司&#34;:4, &#34;中南大学&#34;: 3 }, &#34;components&#34;: { }, }; var downloadJson = { &#34;相同&#34;: 75, &#34;不相同&#34;: 461, }; var themeJson = { }; var waterMarkText = &#39;&#39;; var canvas = document.createElement(&#39;canvas&#39;); var ctx = canvas.getContext(&#39;2d&#39;); canvas.width = canvas.height = 100; ctx.textAlign = &#39;center&#39;; ctx.textBaseline = &#39;middle&#39;; ctx.globalAlpha = 0.08; ctx.font = &#39;20px Microsoft Yahei&#39;; ctx.translate(50, 50); ctx.rotate(-Math.PI / 4); ctx.fillText(waterMarkText, 0, 0); option = { backgroundColor: { type: &#39;pattern&#39;, image: canvas, repeat: &#39;repeat&#39; }, tooltip: {}, title: [{ text: &#39;一致的排名前四的单位&#39;, subtext: &#39;总计 &#39; &#43; builderJson.all, x: &#39;25%&#39;, textAlign: &#39;center&#39; }, { text: &#39;推荐单位与所在单位是否一致的分布&#39;, subtext: &#39;总计 &#39; &#43; Object.keys(downloadJson).reduce(function (all, key) { return all &#43; downloadJson[key]; }, 0), x: &#39;75%&#39;, textAlign: &#39;center&#39; }, { text: &#39;&#39;, subtext: &#39;&#39; &#43; Object.keys(themeJson).reduce(function (all, key) { return all &#43; themeJson[key]; }, 0), x: &#39;75%&#39;, y: &#39;50%&#39;, textAlign: &#39;center&#39; }], grid: [{ top: 50, width: &#39;50%&#39;, bottom: &#39;45%&#39;, left: 10, containLabel: true }, { top: &#39;55%&#39;, width: &#39;50%&#39;, bottom: 0, left: 10, containLabel: true }], xAxis: [{ type: &#39;value&#39;, max: builderJson.all, splitLine: { show: false } }, { type: &#39;value&#39;, max: builderJson.all, gridIndex: 1, splitLine: { show: false } }], yAxis: [{ type: &#39;category&#39;, data: Object.keys(builderJson.charts), axisLabel: { interval: 0, rotate: 30 }, splitLine: { show: false } }, { gridIndex: 1, type: &#39;category&#39;, data: Object.keys(builderJson.components), axisLabel: { interval: 0, rotate: 30 }, splitLine: { show: false } }], series: [{ type: &#39;bar&#39;, stack: &#39;chart&#39;, z: 3, label: { normal: { position: &#39;right&#39;, show: true } }, data: Object.keys(builderJson.charts).map(function (key) { return builderJson.charts[key]; }) }, { type: &#39;bar&#39;, stack: &#39;chart&#39;, silent: true, itemStyle: { normal: { color: &#39;#eee&#39; } }, data: Object.keys(builderJson.charts).map(function (key) { return builderJson.all - builderJson.charts[key]; }) }, { type: &#39;bar&#39;, stack: &#39;component&#39;, xAxisIndex: 1, yAxisIndex: 1, z: 3, label: { normal: { position: &#39;right&#39;, show: true } }, data: Object.keys(builderJson.components).map(function (key) { return builderJson.components[key]; }) }, { type: &#39;bar&#39;, stack: &#39;component&#39;, silent: true, xAxisIndex: 1, yAxisIndex: 1, itemStyle: { normal: { color: &#39;#eee&#39; } }, data: Object.keys(builderJson.components).map(function (key) { return builderJson.all - builderJson.components[key]; }) }, { type: &#39;pie&#39;, radius: [0, &#39;30%&#39;], center: [&#39;75%&#39;, &#39;25%&#39;], data: Object.keys(downloadJson).map(function (key) { return { name: key.replace(&#39;.js&#39;, &#39;&#39;), value: downloadJson[key] } }) }, { type: &#39;pie&#39;, radius: [0, &#39;30%&#39;], center: [&#39;75%&#39;, &#39;75%&#39;], data: Object.keys(themeJson).map(function (key) { return { name: key.replace(&#39;.js&#39;, &#39;&#39;), value: themeJson[key] } }) }] }; if (option &amp;&amp; typeof option === &#34;object&#34;) { myChart.setOption(option, true); }  
+  <meta name="description" content="
 " />
 <meta name="keywords" content="千人计划 数据分析" />
 
@@ -51,19 +51,7 @@
 
 
 <meta property="og:title" content="第十批千人计划数据分析" />
-<meta property="og:description" content="
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-
-" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/201805028/" />
 
@@ -84,43 +72,19 @@
 
 
 <meta itemprop="name" content="第十批千人计划数据分析">
-<meta itemprop="description" content="
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-
-">
+<meta itemprop="description" content="">
 
 
 <meta itemprop="datePublished" content="2018-05-26T09:09:44&#43;08:00" />
 <meta itemprop="dateModified" content="2018-05-26T09:09:44&#43;08:00" />
-<meta itemprop="wordCount" content="2097">
+<meta itemprop="wordCount" content="1488">
 
 
 
 <meta itemprop="keywords" content="数据分析," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="第十批千人计划数据分析"/>
-<meta name="twitter:description" content="
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-
-"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -196,8 +160,8 @@
               <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"> 数据分析 </a>
             
           </div>
-        <span class="more-meta"> 约 2097 字 </span>
-        <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span class="more-meta"> 约 1488 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -229,430 +193,213 @@
 
     
     <div class="post-content">
-      <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
-       <div id="containerTest"  style="width: 100%;height: 500px;margin: auto;"></div>
-       <script>
-var dom = document.getElementById("containerTest");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
+      <p></p>
 
+<h1 id="分析步骤">分析步骤</h1>
 
+<div id="containerTest"  style="width: 100%;height: 500px;margin: auto;"></div>
 
-var builderJson = {
-  "all": 22,
-  "charts": {
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script>
+    var dom = document.getElementById("containerTest");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    var builderJson = {
+    "all": 22,
+    "charts": {
     "上海交通大学": 10,
     "华东理工大学": 5,
     "中航商用航空发动机有限责任公司":4,
     "中南大学": 3
-  },
-  "components": {
-  },
-
-};
-
-
-var downloadJson = {
-  "相同": 75,
-  "不相同": 461,
-};
-
-
-var themeJson = {
-
-};
-
-var waterMarkText = '';
-
-var canvas = document.createElement('canvas');
-var ctx = canvas.getContext('2d');
-canvas.width = canvas.height = 100;
-ctx.textAlign = 'center';
-ctx.textBaseline = 'middle';
-ctx.globalAlpha = 0.08;
-ctx.font = '20px Microsoft Yahei';
-ctx.translate(50, 50);
-ctx.rotate(-Math.PI / 4);
-ctx.fillText(waterMarkText, 0, 0);
-
-option = {
+    },
+    "components": {
+    },
+    };
+    var downloadJson = {
+    "相同": 75,
+    "不相同": 461,
+    };
+    var themeJson = {
+    };
+    var waterMarkText = '';
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = canvas.height = 100;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.globalAlpha = 0.08;
+    ctx.font = '20px Microsoft Yahei';
+    ctx.translate(50, 50);
+    ctx.rotate(-Math.PI / 4);
+    ctx.fillText(waterMarkText, 0, 0);
+    option = {
     backgroundColor: {
-        type: 'pattern',
-        image: canvas,
-        repeat: 'repeat'
+    type: 'pattern',
+    image: canvas,
+    repeat: 'repeat'
     },
     tooltip: {},
     title: [{
-        text: '一致的排名前四的单位',
-        subtext: '总计 ' + builderJson.all,
-        x: '25%',
-        textAlign: 'center'
+    text: '一致的排名前四的单位',
+    subtext: '总计 ' + builderJson.all,
+    x: '25%',
+    textAlign: 'center'
     }, {
-        text: '推荐单位与所在单位是否一致的分布',
-        subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
-            return all + downloadJson[key];
-        }, 0),
-        x: '75%',
-        textAlign: 'center'
+    text: '推荐单位与所在单位是否一致的分布',
+    subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+    return all + downloadJson[key];
+    }, 0),
+    x: '75%',
+    textAlign: 'center'
     }, {
-        text: '',
-        subtext: '' + Object.keys(themeJson).reduce(function (all, key) {
-            return all + themeJson[key];
-        }, 0),
-        x: '75%',
-        y: '50%',
-        textAlign: 'center'
+    text: '',
+    subtext: '' + Object.keys(themeJson).reduce(function (all, key) {
+    return all + themeJson[key];
+    }, 0),
+    x: '75%',
+    y: '50%',
+    textAlign: 'center'
     }],
     grid: [{
-        top: 50,
-        width: '50%',
-        bottom: '45%',
-        left: 10,
-        containLabel: true
+    top: 50,
+    width: '50%',
+    bottom: '45%',
+    left: 10,
+    containLabel: true
     }, {
-        top: '55%',
-        width: '50%',
-        bottom: 0,
-        left: 10,
-        containLabel: true
+    top: '55%',
+    width: '50%',
+    bottom: 0,
+    left: 10,
+    containLabel: true
     }],
     xAxis: [{
-        type: 'value',
-        max: builderJson.all,
-        splitLine: {
-            show: false
-        }
+    type: 'value',
+    max: builderJson.all,
+    splitLine: {
+    show: false
+    }
     }, {
-        type: 'value',
-        max: builderJson.all,
-        gridIndex: 1,
-        splitLine: {
-            show: false
-        }
+    type: 'value',
+    max: builderJson.all,
+    gridIndex: 1,
+    splitLine: {
+    show: false
+    }
     }],
     yAxis: [{
-        type: 'category',
-        data: Object.keys(builderJson.charts),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
-    }, {
-        gridIndex: 1,
-        type: 'category',
-        data: Object.keys(builderJson.components),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
-    }],
-    series: [{
-        type: 'bar',
-        stack: 'chart',
-        z: 3,
-        label: {
-            normal: {
-                position: 'right',
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.charts[key];
-        })
-    }, {
-        type: 'bar',
-        stack: 'chart',
-        silent: true,
-        itemStyle: {
-            normal: {
-                color: '#eee'
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.all - builderJson.charts[key];
-        })
-    }, {
-        type: 'bar',
-        stack: 'component',
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        z: 3,
-        label: {
-            normal: {
-                position: 'right',
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.components[key];
-        })
-    }, {
-        type: 'bar',
-        stack: 'component',
-        silent: true,
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        itemStyle: {
-            normal: {
-                color: '#eee'
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.all - builderJson.components[key];
-        })
-    }, {
-        type: 'pie',
-        radius: [0, '30%'],
-        center: ['75%', '25%'],
-        data: Object.keys(downloadJson).map(function (key) {
-            return {
-                name: key.replace('.js', ''),
-                value: downloadJson[key]
-            }
-        })
-    }, {
-        type: 'pie',
-        radius: [0, '30%'],
-        center: ['75%', '75%'],
-        data: Object.keys(themeJson).map(function (key) {
-            return {
-                name: key.replace('.js', ''),
-                value: themeJson[key]
-            }
-        })
-    }]
-};
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
-       </script>
-
-<p></p>
-
-<p><script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
-       <script>
-var dom = document.getElementById(&ldquo;containerTest&rdquo;);
-var myChart = echarts.init(dom);
-var app = {};
-option = null;</p>
-
-<p>var builderJson = {
-  &ldquo;all&rdquo;: 22,
-  &ldquo;charts&rdquo;: {
-    &ldquo;上海交通大学&rdquo;: 10,
-    &ldquo;华东理工大学&rdquo;: 5,
-    &ldquo;中航商用航空发动机有限责任公司&rdquo;:4,
-    &ldquo;中南大学&rdquo;: 3
-  },
-  &ldquo;components&rdquo;: {
-  },</p>
-
-<p>};</p>
-
-<p>var downloadJson = {
-  &ldquo;相同&rdquo;: 75,
-  &ldquo;不相同&rdquo;: 461,
-};</p>
-
-<p>var themeJson = {</p>
-
-<p>};</p>
-
-<p>var waterMarkText = &ldquo;;</p>
-
-<p>var canvas = document.createElement(&lsquo;canvas&rsquo;);
-var ctx = canvas.getContext(&lsquo;2d&rsquo;);
-canvas.width = canvas.height = 100;
-ctx.textAlign = &lsquo;center&rsquo;;
-ctx.textBaseline = &lsquo;middle&rsquo;;
-ctx.globalAlpha = 0.08;
-ctx.font = &lsquo;20px Microsoft Yahei&rsquo;;
-ctx.translate(50, 50);
-ctx.rotate(-Math.PI / 4);
-ctx.fillText(waterMarkText, 0, 0);</p>
-
-<p>option = {
-    backgroundColor: {
-        type: &lsquo;pattern&rsquo;,
-        image: canvas,
-        repeat: &lsquo;repeat&rsquo;
+    type: 'category',
+    data: Object.keys(builderJson.charts),
+    axisLabel: {
+    interval: 0,
+    rotate: 30
     },
-    tooltip: {},
-    title: [{
-        text: &lsquo;一致的排名前四的单位&rsquo;,
-        subtext: &lsquo;总计 &rsquo; + builderJson.all,
-        x: &lsquo;25%&rsquo;,
-        textAlign: &lsquo;center&rsquo;
+    splitLine: {
+    show: false
+    }
     }, {
-        text: &lsquo;推荐单位与所在单位是否一致的分布&rsquo;,
-        subtext: &lsquo;总计 &rsquo; + Object.keys(downloadJson).reduce(function (all, key) {
-            return all + downloadJson[key];
-        }, 0),
-        x: &lsquo;75%&rsquo;,
-        textAlign: &lsquo;center&rsquo;
-    }, {
-        text: &ldquo;,
-        subtext: &ldquo; + Object.keys(themeJson).reduce(function (all, key) {
-            return all + themeJson[key];
-        }, 0),
-        x: &lsquo;75%&rsquo;,
-        y: &lsquo;50%&rsquo;,
-        textAlign: &lsquo;center&rsquo;
-    }],
-    grid: [{
-        top: 50,
-        width: &lsquo;50%&rsquo;,
-        bottom: &lsquo;45%&rsquo;,
-        left: 10,
-        containLabel: true
-    }, {
-        top: &lsquo;55%&rsquo;,
-        width: &lsquo;50%&rsquo;,
-        bottom: 0,
-        left: 10,
-        containLabel: true
-    }],
-    xAxis: [{
-        type: &lsquo;value&rsquo;,
-        max: builderJson.all,
-        splitLine: {
-            show: false
-        }
-    }, {
-        type: &lsquo;value&rsquo;,
-        max: builderJson.all,
-        gridIndex: 1,
-        splitLine: {
-            show: false
-        }
-    }],
-    yAxis: [{
-        type: &lsquo;category&rsquo;,
-        data: Object.keys(builderJson.charts),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
-    }, {
-        gridIndex: 1,
-        type: &lsquo;category&rsquo;,
-        data: Object.keys(builderJson.components),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
+    gridIndex: 1,
+    type: 'category',
+    data: Object.keys(builderJson.components),
+    axisLabel: {
+    interval: 0,
+    rotate: 30
+    },
+    splitLine: {
+    show: false
+    }
     }],
     series: [{
-        type: &lsquo;bar&rsquo;,
-        stack: &lsquo;chart&rsquo;,
-        z: 3,
-        label: {
-            normal: {
-                position: &lsquo;right&rsquo;,
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.charts[key];
-        })
+    type: 'bar',
+    stack: 'chart',
+    z: 3,
+    label: {
+    normal: {
+    position: 'right',
+    show: true
+    }
+    },
+    data: Object.keys(builderJson.charts).map(function (key) {
+    return builderJson.charts[key];
+    })
     }, {
-        type: &lsquo;bar&rsquo;,
-        stack: &lsquo;chart&rsquo;,
-        silent: true,
-        itemStyle: {
-            normal: {
-                color: &lsquo;#eee&rsquo;
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.all - builderJson.charts[key];
-        })
+    type: 'bar',
+    stack: 'chart',
+    silent: true,
+    itemStyle: {
+    normal: {
+    color: '#eee'
+    }
+    },
+    data: Object.keys(builderJson.charts).map(function (key) {
+    return builderJson.all - builderJson.charts[key];
+    })
     }, {
-        type: &lsquo;bar&rsquo;,
-        stack: &lsquo;component&rsquo;,
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        z: 3,
-        label: {
-            normal: {
-                position: &lsquo;right&rsquo;,
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.components[key];
-        })
+    type: 'bar',
+    stack: 'component',
+    xAxisIndex: 1,
+    yAxisIndex: 1,
+    z: 3,
+    label: {
+    normal: {
+    position: 'right',
+    show: true
+    }
+    },
+    data: Object.keys(builderJson.components).map(function (key) {
+    return builderJson.components[key];
+    })
     }, {
-        type: &lsquo;bar&rsquo;,
-        stack: &lsquo;component&rsquo;,
-        silent: true,
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        itemStyle: {
-            normal: {
-                color: &lsquo;#eee&rsquo;
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.all - builderJson.components[key];
-        })
+    type: 'bar',
+    stack: 'component',
+    silent: true,
+    xAxisIndex: 1,
+    yAxisIndex: 1,
+    itemStyle: {
+    normal: {
+    color: '#eee'
+    }
+    },
+    data: Object.keys(builderJson.components).map(function (key) {
+    return builderJson.all - builderJson.components[key];
+    })
     }, {
-        type: &lsquo;pie&rsquo;,
-        radius: [0, &lsquo;30%&rsquo;],
-        center: [&lsquo;75%&rsquo;, &lsquo;25%&rsquo;],
-        data: Object.keys(downloadJson).map(function (key) {
-            return {
-                name: key.replace(&lsquo;.js&rsquo;, &ldquo;),
-                value: downloadJson[key]
-            }
-        })
+    type: 'pie',
+    radius: [0, '30%'],
+    center: ['75%', '25%'],
+    data: Object.keys(downloadJson).map(function (key) {
+    return {
+    name: key.replace('.js', ''),
+    value: downloadJson[key]
+    }
+    })
     }, {
-        type: &lsquo;pie&rsquo;,
-        radius: [0, &lsquo;30%&rsquo;],
-        center: [&lsquo;75%&rsquo;, &lsquo;75%&rsquo;],
-        data: Object.keys(themeJson).map(function (key) {
-            return {
-                name: key.replace(&lsquo;.js&rsquo;, &ldquo;),
-                value: themeJson[key]
-            }
-        })
+    type: 'pie',
+    radius: [0, '30%'],
+    center: ['75%', '75%'],
+    data: Object.keys(themeJson).map(function (key) {
+    return {
+    name: key.replace('.js', ''),
+    value: themeJson[key]
+    }
+    })
     }]
-};
-if (option &amp;&amp; typeof option === &ldquo;object&rdquo;) {
+    };
+    if (option && typeof option === "object") {
     myChart.setOption(option, true);
-}
-       </script></p>
+    }
+</script>
 
-<h1 id="分析步骤">分析步骤</h1>
+
 
 <pre><code class="language-sequence">Title: 第十批千人计划test
 test-&gt;test1: test
@@ -979,14 +726,6 @@ shadowColor: 'rgba(0, 0, 0, 0.5)'
 <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
-<script type="text/javascript">
- window.MathJax = {
-     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-     showProcessingMessages: false,
-     messageStyle: 'none'
- };
-</script>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 

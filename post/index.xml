@@ -17,220 +17,7 @@
       <pubDate>Sat, 26 May 2018 09:09:44 +0800</pubDate>
       
       <guid>http://localhost:1313/post/201805028/</guid>
-      <description>&lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://api.map.baidu.com/api?v=2.0&amp;ak=ZUONbpqGBsYGXNIYHicvbAbM&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js&#34;&gt;&lt;/script&gt;
-       &lt;script type=&#34;text/javascript&#34; src=&#34;http://echarts.baidu.com/gallery/vendors/simplex.js&#34;&gt;&lt;/script&gt;
-       &lt;div id=&#34;containerTest&#34;  style=&#34;width: 100%;height: 500px;margin: auto;&#34;&gt;&lt;/div&gt;
-       &lt;script&gt;
-var dom = document.getElementById(&#34;containerTest&#34;);
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-
-
-
-var builderJson = {
-  &#34;all&#34;: 22,
-  &#34;charts&#34;: {
-    &#34;上海交通大学&#34;: 10,
-    &#34;华东理工大学&#34;: 5,
-    &#34;中航商用航空发动机有限责任公司&#34;:4,
-    &#34;中南大学&#34;: 3
-  },
-  &#34;components&#34;: {
-  },
-
-};
-
-
-var downloadJson = {
-  &#34;相同&#34;: 75,
-  &#34;不相同&#34;: 461,
-};
-
-
-var themeJson = {
-
-};
-
-var waterMarkText = &#39;&#39;;
-
-var canvas = document.createElement(&#39;canvas&#39;);
-var ctx = canvas.getContext(&#39;2d&#39;);
-canvas.width = canvas.height = 100;
-ctx.textAlign = &#39;center&#39;;
-ctx.textBaseline = &#39;middle&#39;;
-ctx.globalAlpha = 0.08;
-ctx.font = &#39;20px Microsoft Yahei&#39;;
-ctx.translate(50, 50);
-ctx.rotate(-Math.PI / 4);
-ctx.fillText(waterMarkText, 0, 0);
-
-option = {
-    backgroundColor: {
-        type: &#39;pattern&#39;,
-        image: canvas,
-        repeat: &#39;repeat&#39;
-    },
-    tooltip: {},
-    title: [{
-        text: &#39;一致的排名前四的单位&#39;,
-        subtext: &#39;总计 &#39; + builderJson.all,
-        x: &#39;25%&#39;,
-        textAlign: &#39;center&#39;
-    }, {
-        text: &#39;推荐单位与所在单位是否一致的分布&#39;,
-        subtext: &#39;总计 &#39; + Object.keys(downloadJson).reduce(function (all, key) {
-            return all + downloadJson[key];
-        }, 0),
-        x: &#39;75%&#39;,
-        textAlign: &#39;center&#39;
-    }, {
-        text: &#39;&#39;,
-        subtext: &#39;&#39; + Object.keys(themeJson).reduce(function (all, key) {
-            return all + themeJson[key];
-        }, 0),
-        x: &#39;75%&#39;,
-        y: &#39;50%&#39;,
-        textAlign: &#39;center&#39;
-    }],
-    grid: [{
-        top: 50,
-        width: &#39;50%&#39;,
-        bottom: &#39;45%&#39;,
-        left: 10,
-        containLabel: true
-    }, {
-        top: &#39;55%&#39;,
-        width: &#39;50%&#39;,
-        bottom: 0,
-        left: 10,
-        containLabel: true
-    }],
-    xAxis: [{
-        type: &#39;value&#39;,
-        max: builderJson.all,
-        splitLine: {
-            show: false
-        }
-    }, {
-        type: &#39;value&#39;,
-        max: builderJson.all,
-        gridIndex: 1,
-        splitLine: {
-            show: false
-        }
-    }],
-    yAxis: [{
-        type: &#39;category&#39;,
-        data: Object.keys(builderJson.charts),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
-    }, {
-        gridIndex: 1,
-        type: &#39;category&#39;,
-        data: Object.keys(builderJson.components),
-        axisLabel: {
-            interval: 0,
-            rotate: 30
-        },
-        splitLine: {
-            show: false
-        }
-    }],
-    series: [{
-        type: &#39;bar&#39;,
-        stack: &#39;chart&#39;,
-        z: 3,
-        label: {
-            normal: {
-                position: &#39;right&#39;,
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.charts[key];
-        })
-    }, {
-        type: &#39;bar&#39;,
-        stack: &#39;chart&#39;,
-        silent: true,
-        itemStyle: {
-            normal: {
-                color: &#39;#eee&#39;
-            }
-        },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.all - builderJson.charts[key];
-        })
-    }, {
-        type: &#39;bar&#39;,
-        stack: &#39;component&#39;,
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        z: 3,
-        label: {
-            normal: {
-                position: &#39;right&#39;,
-                show: true
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.components[key];
-        })
-    }, {
-        type: &#39;bar&#39;,
-        stack: &#39;component&#39;,
-        silent: true,
-        xAxisIndex: 1,
-        yAxisIndex: 1,
-        itemStyle: {
-            normal: {
-                color: &#39;#eee&#39;
-            }
-        },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.all - builderJson.components[key];
-        })
-    }, {
-        type: &#39;pie&#39;,
-        radius: [0, &#39;30%&#39;],
-        center: [&#39;75%&#39;, &#39;25%&#39;],
-        data: Object.keys(downloadJson).map(function (key) {
-            return {
-                name: key.replace(&#39;.js&#39;, &#39;&#39;),
-                value: downloadJson[key]
-            }
-        })
-    }, {
-        type: &#39;pie&#39;,
-        radius: [0, &#39;30%&#39;],
-        center: [&#39;75%&#39;, &#39;75%&#39;],
-        data: Object.keys(themeJson).map(function (key) {
-            return {
-                name: key.replace(&#39;.js&#39;, &#39;&#39;),
-                value: themeJson[key]
-            }
-        })
-    }]
-};
-if (option &amp;&amp; typeof option === &#34;object&#34;) {
-    myChart.setOption(option, true);
-}
-       &lt;/script&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -308,6 +95,15 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
       <description>&lt;blockquote&gt;
 &lt;p&gt;hugo 静态博客系统，golang编写。
 &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/post/for-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/for-example/</guid>
+      <description>var dom = document.getElementById(&#34;containerTest&#34;); var myChart = echarts.init(dom); var app = {}; option = null; var builderJson = { &#34;all&#34;: 22, &#34;charts&#34;: { &#34;上海交通大学&#34;: 10, &#34;华东理工大学&#34;: 5, &#34;中航商用航空发动机有限责任公司&#34;:4, &#34;中南大学&#34;:</description>
     </item>
     
   </channel>
