@@ -152,13 +152,227 @@
             <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"> 数据分析 </a>
           
         </div>
-      
+      <span class="more-meta"> 约 2097 字 </span>
+      <span class="more-meta"> 预计阅读 5 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p></p>
+      <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <div id="containerTest"  style="width: 100%;height: 500px;margin: auto;"></div>
+       <script>
+var dom = document.getElementById("containerTest");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+
+
+
+var builderJson = {
+  "all": 22,
+  "charts": {
+    "上海交通大学": 10,
+    "华东理工大学": 5,
+    "中航商用航空发动机有限责任公司":4,
+    "中南大学": 3
+  },
+  "components": {
+  },
+
+};
+
+
+var downloadJson = {
+  "相同": 75,
+  "不相同": 461,
+};
+
+
+var themeJson = {
+
+};
+
+var waterMarkText = '';
+
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
+canvas.width = canvas.height = 100;
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.globalAlpha = 0.08;
+ctx.font = '20px Microsoft Yahei';
+ctx.translate(50, 50);
+ctx.rotate(-Math.PI / 4);
+ctx.fillText(waterMarkText, 0, 0);
+
+option = {
+    backgroundColor: {
+        type: 'pattern',
+        image: canvas,
+        repeat: 'repeat'
+    },
+    tooltip: {},
+    title: [{
+        text: '一致的排名前四的单位',
+        subtext: '总计 ' + builderJson.all,
+        x: '25%',
+        textAlign: 'center'
+    }, {
+        text: '推荐单位与所在单位是否一致的分布',
+        subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+            return all + downloadJson[key];
+        }, 0),
+        x: '75%',
+        textAlign: 'center'
+    }, {
+        text: '',
+        subtext: '' + Object.keys(themeJson).reduce(function (all, key) {
+            return all + themeJson[key];
+        }, 0),
+        x: '75%',
+        y: '50%',
+        textAlign: 'center'
+    }],
+    grid: [{
+        top: 50,
+        width: '50%',
+        bottom: '45%',
+        left: 10,
+        containLabel: true
+    }, {
+        top: '55%',
+        width: '50%',
+        bottom: 0,
+        left: 10,
+        containLabel: true
+    }],
+    xAxis: [{
+        type: 'value',
+        max: builderJson.all,
+        splitLine: {
+            show: false
+        }
+    }, {
+        type: 'value',
+        max: builderJson.all,
+        gridIndex: 1,
+        splitLine: {
+            show: false
+        }
+    }],
+    yAxis: [{
+        type: 'category',
+        data: Object.keys(builderJson.charts),
+        axisLabel: {
+            interval: 0,
+            rotate: 30
+        },
+        splitLine: {
+            show: false
+        }
+    }, {
+        gridIndex: 1,
+        type: 'category',
+        data: Object.keys(builderJson.components),
+        axisLabel: {
+            interval: 0,
+            rotate: 30
+        },
+        splitLine: {
+            show: false
+        }
+    }],
+    series: [{
+        type: 'bar',
+        stack: 'chart',
+        z: 3,
+        label: {
+            normal: {
+                position: 'right',
+                show: true
+            }
+        },
+        data: Object.keys(builderJson.charts).map(function (key) {
+            return builderJson.charts[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'chart',
+        silent: true,
+        itemStyle: {
+            normal: {
+                color: '#eee'
+            }
+        },
+        data: Object.keys(builderJson.charts).map(function (key) {
+            return builderJson.all - builderJson.charts[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'component',
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        z: 3,
+        label: {
+            normal: {
+                position: 'right',
+                show: true
+            }
+        },
+        data: Object.keys(builderJson.components).map(function (key) {
+            return builderJson.components[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'component',
+        silent: true,
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        itemStyle: {
+            normal: {
+                color: '#eee'
+            }
+        },
+        data: Object.keys(builderJson.components).map(function (key) {
+            return builderJson.all - builderJson.components[key];
+        })
+    }, {
+        type: 'pie',
+        radius: [0, '30%'],
+        center: ['75%', '25%'],
+        data: Object.keys(downloadJson).map(function (key) {
+            return {
+                name: key.replace('.js', ''),
+                value: downloadJson[key]
+            }
+        })
+    }, {
+        type: 'pie',
+        radius: [0, '30%'],
+        center: ['75%', '75%'],
+        data: Object.keys(themeJson).map(function (key) {
+            return {
+                name: key.replace('.js', ''),
+                value: themeJson[key]
+            }
+        })
+    }]
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+<p></p>
     </div>
     <div class="read-more">
       <a href="/post/201805028/" class="read-more-link">阅读更多</a>
@@ -177,7 +391,8 @@
             <a href="/categories/leetcode/"> leetcode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 112 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
@@ -202,7 +417,8 @@
             <a href="/categories/leetcode/"> leetcode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 241 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
@@ -227,7 +443,8 @@
             <a href="/categories/leetcode/"> Leetcode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 459 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
@@ -252,7 +469,8 @@
             <a href="/categories/leetcode/"> LeetCode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 631 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
   
@@ -280,7 +498,8 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
             <a href="/categories/leetcode/"> LeetCode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 289 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
@@ -305,7 +524,8 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
             <a href="/categories/leetcode/"> LeetCode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 214 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
@@ -330,7 +550,8 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
             <a href="/categories/leetcode/"> leetcode </a>
           
         </div>
-      
+      <span class="more-meta"> 约 523 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
   
@@ -408,6 +629,14 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
 <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript">
+ window.MathJax = {
+     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+     showProcessingMessages: false,
+     messageStyle: 'none'
+ };
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
 
