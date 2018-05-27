@@ -1,7 +1,5 @@
 <!--more-->
-
 # 分析步骤
-{{< partial "for-example.html" >}}
 ```sequence
 Title: 第十批千人计划test
 test->test1: test
@@ -9,6 +7,13 @@ test1-->test2: test
 test2->>test3: test
 test3-->>test: test
 ```
+
+# testing0
+{{< partial "for-example.html" >}}
+
+# testing1
+{{< partial "distributed.html" >}}
+
 # 分析结果
 
 ## echart Test 
