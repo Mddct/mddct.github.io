@@ -73,12 +73,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/for-example/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
