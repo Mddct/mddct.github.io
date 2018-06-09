@@ -14,10 +14,12 @@ option-->可视化: echart
 (鼠标点击有惊喜)
 # 推荐单位和所在单位
 
-{{< partial "for-example.html" >}}
 
-##     
+{{< partial "for-example.html" >}}
+ ____   
+ 
 {{< partial "distributes2.html" >}}
+
 
 > 推荐单位与目前所在单位一致的人才的数量排名中，上海交通大学、华东理工大学、中航商用航空发动机有限责任公司、中南大学的人数较多。说明这四个单位人才的流动性较小。
 
