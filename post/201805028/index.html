@@ -27,7 +27,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.40.2" />
+<meta name="generator" content="Hugo 0.41" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/201805028/" />
@@ -77,7 +77,7 @@
 
 <meta itemprop="datePublished" content="2018-05-26T09:09:44&#43;08:00" />
 <meta itemprop="dateModified" content="2018-05-26T09:09:44&#43;08:00" />
-<meta itemprop="wordCount" content="3568">
+<meta itemprop="wordCount" content="4592">
 
 
 
@@ -160,8 +160,8 @@
               <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"> 数据分析 </a>
             
           </div>
-        <span class="more-meta"> 约 3568 字 </span>
-        <span class="more-meta"> 预计阅读 8 分钟 </span>
+        <span class="more-meta"> 约 4592 字 </span>
+        <span class="more-meta"> 预计阅读 10 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -175,17 +175,16 @@
     <nav id="TableOfContents">
 <ul>
 <li><a href="#分析步骤">分析步骤</a></li>
-<li><a href="#testing0">testing0</a></li>
-<li><a href="#testing0-0">testing0.0</a></li>
-<li><a href="#testing0-1">testing0.1</a></li>
-<li><a href="#testing0-2">testing0.2</a></li>
-<li><a href="#testing0-3">testing0.3</a></li>
-<li><a href="#testing0-4">testing0.4</a></li>
-<li><a href="#testing0-5">testing0.5</a></li>
-<li><a href="#testing0-6">testing0.6</a></li>
-<li><a href="#testing0-7">testing0.7</a></li>
-<li><a href="#testing0-8">testing0.8</a></li>
-<li><a href="#testing1">testing1</a></li>
+<li><a href="#推荐单位和所在单位">推荐单位和所在单位</a></li>
+<li><a href="#青千所在单位人数分布">青千所在单位人数分布</a></li>
+<li><a href="#男女统计">男女统计</a></li>
+<li><a href="#出生年份统计">出生年份统计</a></li>
+<li><a href="#男女出生年份的分别统计">男女出生年份的分别统计</a></li>
+<li><a href="#姓氏统计">姓氏统计</a></li>
+<li><a href="#籍贯不完全统计">籍贯不完全统计</a></li>
+<li><a href="#专业领域统计">专业领域统计</a></li>
+<li><a href="#推荐单位统计">推荐单位统计</a></li>
+<li><a href="#毕业院校分布">毕业院校分布</a></li>
 </ul>
 </nav>
   </div>
@@ -197,14 +196,18 @@
 
 <h1 id="分析步骤">分析步骤</h1>
 
-<pre><code class="language-sequence">Title: 第十批千人计划test
-test-&gt;test1: test
-test1--&gt;test2: test
-test2-&gt;&gt;test3: test
-test3--&gt;&gt;test: test
+<pre><code class="language-sequence">Title: 第十批千人计划
+收集数据-&gt;整理: 坐标转换
+整理-&gt; 分类: 
+整理-&gt; 聚类:
+聚类--&gt;option: kmeans
+分类-&gt;option: svm
+option--&gt;可视化: echart
 </code></pre>
 
-<h1 id="testing0">testing0</h1>
+<p>(鼠标点击有惊喜)</p>
+
+<h1 id="推荐单位和所在单位">推荐单位和所在单位</h1>
 
 <div id="containerTest"  style="float: left; width: 50%;height: 450px;margin: auto;"></div>
 <div id="test" style="float: left; width:50%; height: 450px; margin : auto"></div>
@@ -336,8 +339,6 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-0">testing0.0</h1>
-
 <div id="chart01" style="width: 100%;height:500px;"></div>
 
 
@@ -431,7 +432,11 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-1">testing0.1</h1>
+<blockquote>
+<p>推荐单位与目前所在单位一致的人才的数量排名中，上海交通大学、华东理工大学、中航商用航空发动机有限责任公司、中南大学的人数较多。说明这四个单位人才的流动性较小。</p>
+</blockquote>
+
+<h1 id="青千所在单位人数分布">青千所在单位人数分布</h1>
 
 
 <div id="chart11" style="width: 100%;height:500px;"></div>
@@ -654,18 +659,23 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-2">testing0.2</h1>
+<blockquote>
+<p>目前所在单位中，该单位具有人才数量排名考前的单位及地址如图。其中中国国内有3所大学在排名中，其余为美国大学及研究院以及1所新加坡研究院。
+该排名说明，人才在获得称号后，流动性较大，流入国外大学及研究院的人数较多。</p>
+</blockquote>
+
+<h1 id="男女统计">男女统计</h1>
 
 <div id="container12" style="height: 500px; width:100% ; margin:auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script>
  var dom12 = document.getElementById("container12");
  var myChart12 = echarts.init(dom12);
@@ -731,18 +741,22 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-3">testing0.3</h1>
+<blockquote>
+<p>男性占比92.38%，女性占比7.63%。男性比例远远超过女性。</p>
+</blockquote>
+
+<h1 id="出生年份统计">出生年份统计</h1>
 
 <div id="container2" style="height: 500px; width:100%; margin:auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script>
  var dom2 = document.getElementById("container2");
  var myChart2 = echarts.init(dom2);
@@ -773,18 +787,24 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-4">testing0.4</h1>
+<blockquote>
+<p>出生年份在1973年到1982年的人数居多。</p>
+
+<p>即以2010年为截止，28岁到37岁的人数占了绝大多数。</p>
+</blockquote>
+
+<h1 id="男女出生年份的分别统计">男女出生年份的分别统计</h1>
 
 <div id="container3" style="height: 850px; width:100%; margin:auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
  var dom3 = document.getElementById("container3");
  var myChart3 = echarts.init(dom3);
@@ -935,18 +955,26 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-5">testing0.5</h1>
+<blockquote>
+<p>男性出生在1973到1980的人数占比较多，总占比68.69%，占比前三为1979、1976、1977；</p>
+
+<p>女性出生在1972到1982的人数占比较多，总占比82.04%，占比前二维1979、1976。</p>
+
+<p>总体上，男女的出生年份分布相似度较大；且均在1979、1976年占比最多。</p>
+</blockquote>
+
+<h1 id="姓氏统计">姓氏统计</h1>
 
 <div id="container4" style="height: 500px; width:100%; margin=auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
  var dom4 = document.getElementById("container4");
  var myChart4 = echarts.init(dom4);
@@ -1014,18 +1042,22 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-6">testing0.6</h1>
+<blockquote>
+<p>姓氏分布中，占比靠前的都是常见姓氏。</p>
+</blockquote>
+
+<h1 id="籍贯不完全统计">籍贯不完全统计</h1>
 
 <div id="container5" style="height: 500px; width:100%; margin:auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
  var dom5 = document.getElementById("container5");
  var myChart5 = echarts.init(dom5);
@@ -1120,19 +1152,25 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-7">testing0.7</h1>
+<blockquote>
+<p>籍贯占比前三位为江苏（13.95%）、浙江（13.95%）、湖北（9.3%）。</p>
+
+<p>数据说明，经济越发达的地方，入选人才越多。</p>
+</blockquote>
+
+<h1 id="专业领域统计">专业领域统计</h1>
 
 
 <div id="container6" style="height: 500px; width:100%; margin=auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
  var dom6 = document.getElementById("container6");
  var myChart6 = echarts.init(dom6);
@@ -1223,18 +1261,22 @@ test3--&gt;&gt;test: test
 
 
 
-<h1 id="testing0-8">testing0.8</h1>
+<blockquote>
+<p>专业领域中，生命科学、信息科学、化学、数理科学居多</p>
+</blockquote>
+
+<h1 id="推荐单位统计">推荐单位统计</h1>
 
 <p><div id="container7" style="height: 500px; width:100%; margin:auto"></div>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
  var dom7 = document.getElementById("container7");
  var myChart7 = echarts.init(dom7);
@@ -1287,7 +1329,13 @@ test3--&gt;&gt;test: test
 
 </p>
 
-<h1 id="testing1">testing1</h1>
+<blockquote>
+<p>推荐单位中，复旦大学推荐最多，达到138个；其次为上海交通大学（33）、中国科学技术大学（31）、北京大学（29）。</p>
+
+<p>推荐单位绝大多数是大学、研究院，企业较少</p>
+</blockquote>
+
+<h1 id="毕业院校分布">毕业院校分布</h1>
 
 <div id="distributedTest"  style="width: 100%;height: 500px;margin: auto;"></div>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
@@ -1407,6 +1455,10 @@ test3--&gt;&gt;test: test
    
 
 
+
+<blockquote>
+<p>有77.17%的人才有国外教育背景。说明在相关专业领域，国外的专业发展情况、教育情况均优于国内。</p>
+</blockquote>
 
 <!-- # 分析结果 -->
 
@@ -1769,6 +1821,24 @@ test3--&gt;&gt;test: test
 <!-- }; -->
 
 <!-- ``` -->
+
+<blockquote>
+<p>发现</p>
+
+<p>1、    入选人才中，男性占据绝大多数。所有人才中，多数人才入选时年龄处于28-37岁之间。</p>
+
+<p>2、    从人才籍贯分析，经济越发达的地方，入选人才越多。</p>
+
+<p>3、    从专业领域分析，国家人才选拔侧重生命科学、信息科学、化学、数理科学领域。</p>
+
+<p>4、    近78%的入选人才有国外教育背景。</p>
+
+<p>5、    从推荐单位分析，目前国内高校及研究院对人才需求远超过企业。</p>
+
+<p>6、    入选千人计划后，人才的流动性非常大。86%的人才出现流动，其中相当部分人才流入国外大学及研究院，特别是美国的相关大学及研究院。</p>
+
+<p>注：本分析基于第14、15、18、19组的千人计划人才名单。</p>
+</blockquote>
     </div>
 
     
